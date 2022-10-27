@@ -36,14 +36,14 @@ def get_dataloaders(dataset_name,poison_type,trigger_size,poison_rate):
                 trainset = dataloader(root='./data', train=True, download=True, transform=transform_train)
                 trainloader_clean = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True, num_workers=4)
             
-                trainset = npy_data.dataset(root='./sample_specific_p5_s3', train=True, transform=transform_train)
+                trainset = npy_data.dataset(root='./label_specific_p5_s3', train=True, transform=transform_train)
                 trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True, num_workers=4)
 
-                trainset_transform_test = npy_data.dataset(root='./sample_specific_p5_s3', train=True, transform=transform_test)
+                trainset_transform_test = npy_data.dataset(root='./label_specific_p5_s3', train=True, transform=transform_test)
                 trainloader_no_shuffle = torch.utils.data.DataLoader(trainset_transform_test, batch_size=128, shuffle=False, num_workers=4)
                 trainloader_no_shuffle_bs1 = torch.utils.data.DataLoader(trainset_transform_test, batch_size=1, shuffle=False)
 
-                testset = npy_data.dataset(root='./sample_specific_p5_s3', train=False, transform=transform_test)
+                testset = npy_data.dataset(root='./label_specific_p5_s3', train=False, transform=transform_test)
                 testloader_poisoned = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False, num_workers=4)
 
         elif poison_type == "single_target":

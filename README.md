@@ -5,7 +5,7 @@ code for "Training with More Confidence: Mitigating Injected and Natural Backdoo
 requirements.txt
 
 ## Prepare Data
-We provide poisonsed CIFAR10 dataset (single-target BadNets attack). 
+We provide poisonsed CIFAR10 dataset (https://drive.google.com/drive/folders/13oBVDijC-nweBtHw2CBbcevXemc5vTTW). 
 ```bash
 unzip single_target_p5_s3.zip
 ```
